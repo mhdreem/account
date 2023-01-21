@@ -1,0 +1,64 @@
+<h1 mat-dialog-title>مستكشف المجموعات | {{selectedNodeAncestors}}</h1>
+<div mat-dialog-content>
+    <mat-progress-bar *ngIf="LoadingFinish == false" mode="indeterminate" #progressbar></mat-progress-bar>
+    <ngx-hover-opacity [isHoverVisible]="!LoadingFinish">
+        <form [formGroup]="Form">
+            <mat-form-field appearance="fill" >
+                <mat-label>
+                    {{( this.selected_AccountsIndex.accIndex_NodeType_FK==1) ?'اسم المجموعة عربي':'اسم الحساب عربي'}}</mat-label>
+                <input matInput type="text" [formControl]="AccIndex_Name_AR"
+                id="AccIndex_Name_AR" (keyup.enter)="focusNext('AccIndex_Name_EN')">
+            </mat-form-field>
+            <mat-form-field appearance="fill" >
+                <mat-label>{{(this.selected_AccountsIndex.accIndex_NodeType_FK==1)?'اسم المجموعة انجليزي':'اسم الحساب انجليزي'}}</mat-label>
+                <input matInput type="text" [formControl]="AccIndex_Name_EN"
+                id="AccIndex_Name_EN" (keyup.enter)="focusNext('AccIndex_Number')">
+            </mat-form-field>
+            <div *ngIf="this.selected_AccountsIndex.accIndex_NodeType_FK==2">
+                <mat-form-field appearance="fill" >
+                    <mat-label>كود الحساب</mat-label>
+                    <input matInput [formControl]="AccIndex_Number"
+                    id="AccIndex_Number" (keyup.enter)="focusNext('AccIndex_Type_FK')">
+                </mat-form-field>
+                <div style="padding: 10px; background-color: #F5F5F5; margin-bottom: 20px;">
+                    <span class="ml">طبيعة الحساب</span>
+                    <mat-radio-group [formControl]="AccIndex_Type_FK" id="AccIndex_Type_FK" (keyup.enter)="focusNext('AccIndex_Form_FK')">
+                        <mat-radio-button color="primary" *ngFor="let type of AccountsType_List; let i=index" [value]="i+1">{{type.accType_Name_AR}}</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div style="padding: 10px; background-color: #F5F5F5; margin-bottom: 20px;">
+                    <span class="ml">شكل الحساب</span>
+                    <mat-radio-group [formControl]="AccIndex_Form_FK" id="AccIndex_Form_FK" (keyup.enter)="focusNext('AccIndex_AppearIN_FK')">
+                        <mat-radio-button color="primary" *ngFor="let form of AccountsForms_List; let i=index" [value]="i+1">{{form.accForm_Name_AR}}</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div style="padding: 10px; background-color: #F5F5F5; margin-bottom: 20px;">
+                    <span class="ml">يظهر في</span>
+                    <mat-radio-group [formControl]="AccIndex_AppearIN_FK" id="AccIndex_AppearIN_FK" (keyup.enter)="focusNext('AccIndex_Name_AR')">
+                        <mat-radio-button color="primary" [value]="1">قائمة الدخل</mat-radio-button>
+                        <mat-radio-button color="primary" [value]="2">الميزانية</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+            </div>
+        </form>
+    </ngx-hover-opacity>
+    
+    
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button id="cancel" (click)="onNoClick()">
+        <mat-icon class="mat-icon-rtl-mirror">close
+        </mat-icon>
+        الغاء
+    </button>
+    <button mat-raised-button id="clear" (click)="clear()">
+        <mat-icon class="mat-icon-rtl-mirror">refresh
+        </mat-icon>
+        جديد
+    </button>
+    <button mat-raised-button id="save" (click)="save()" [disabled]="!Form.valid">
+        <mat-icon class="mat-icon-rtl-mirror">save
+        </mat-icon>
+        حفظ
+    </button>
+  </div>

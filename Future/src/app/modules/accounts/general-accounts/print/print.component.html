@@ -1,0 +1,90 @@
+<div class=WordSection1>
+
+    <div align=center>
+    
+    <table class=MsoTableGrid dir=rtl border=0 cellspacing=0 cellpadding=0
+     style='border-collapse:collapse;border:none'>
+     <tr>
+      <td width=208 style='width:155.8pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal align=center dir=rtl style='margin-bottom:0in;text-align:
+      center;line-height:normal;direction:rtl;unicode-bidi:embed'><b><span
+      lang=AR-SY style='font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+      </td>
+      <td width=236 style='width:176.9pt;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal align=center dir=rtl style='margin-bottom:0in;text-align:
+      center;line-height:normal;direction:rtl;unicode-bidi:embed'><b><span
+      lang=AR-SA style='font-family:"Arial",sans-serif'>&nbsp;</span></b></p>
+      </td>
+      <td width=294 style='width:220.2pt;padding:0in 5.4pt 0in 5.4pt'>
+      <div align=right>
+      <table class=MsoTableGrid dir=rtl border=1 cellspacing=0 cellpadding=0
+       style='margin-left:43.8pt;border-collapse:collapse;border:none'>
+       <tr>
+        <td width=161 style='width:120.6pt;border:solid windowtext 1.0pt;
+        padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal align=center dir=rtl style='margin-bottom:0in;
+        text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed'><span
+        lang=AR-SA style='font-family:"Arial",sans-serif'>التاريخ: {{todayDate | date:'yyyy/MM/dd'}}</span></p>
+        </td>
+       </tr>
+       <tr>
+        <td width=161 style='width:120.6pt;border:solid windowtext 1.0pt;
+        border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+        <p class=MsoNormal align=center dir=rtl style='margin-bottom:0in;
+        text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed'><span
+        lang=AR-SA style='font-family:"Arial",sans-serif'>التوقيت: {{todayDate | date:'shortTime':'+0200'}}</span></p>
+        </td>
+       </tr>
+      </table>
+      </div>
+      <p class=MsoNormal align=center dir=rtl style='margin-bottom:0in;text-align:
+      center;line-height:normal;direction:rtl;unicode-bidi:embed'></p>
+      </td>
+     </tr>
+    </table>
+    
+    </div>
+    
+    <p class=MsoNormal dir=rtl style='text-align:right;direction:rtl;unicode-bidi:
+    embed'><span dir=ltr>&nbsp;</span></p>
+    
+    <div align=center>
+    
+    <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+     style='border-collapse:collapse;border:none'>
+     <tr style='height:6.05pt;'>
+      <td width=347 style='width:260.45pt;border:solid windowtext 1.0pt;background:
+      #BFBFBF;padding:0in 5.4pt 0in 5.4pt;height:6.05pt'>
+      <p class=MsoNormal align=center dir=rtl style='margin-bottom:0in;text-align:
+      center;line-height:normal;direction:rtl;unicode-bidi:embed'><span lang=AR-SA
+      style='font-family:"Arial",sans-serif;color:black'>كود الحساب</span></p>
+      </td>
+      <td width=347 style='width:260.45pt;border:solid windowtext 1.0pt;border-left:
+      none;background:#BFBFBF;padding:0in 5.4pt 0in 5.4pt;height:6.05pt'>
+      <p class=MsoNormal align=center dir=rtl style='margin-bottom:0in;text-align:
+      center;line-height:normal;direction:rtl;unicode-bidi:embed'><span lang=AR-SA
+      style='font-family:"Arial",sans-serif;color:black'>الحساب</span></p>
+      </td>
+     </tr>
+     <tr *ngFor="let datum of data">
+      <td width=348 style='width:260.7pt;border:solid windowtext 1.0pt;border-top:
+      none;padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal align=center dir=rtl style='margin-bottom:0in;text-align:
+      center;line-height:normal;direction:rtl;unicode-bidi:embed'><span dir=ltr
+      style='font-size:9.0pt'>{{datum.accIndex_Code}}</span></p>
+      </td>
+      <td width=347 style='width:260.2pt;border-top:none;border-left:none;
+      border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+      padding:0in 5.4pt 0in 5.4pt'>
+      <p class=MsoNormal align=center dir=rtl style='margin-bottom:0in;text-align:
+      center;line-height:normal;direction:rtl;unicode-bidi:embed'><span dir=ltr>{{datum.accIndex_Name_AR}}  </span></p>
+      </td>
+     </tr>
+    </table>
+    
+    </div>
+    
+    <p class=MsoNormal dir=rtl style='text-align:right;direction:rtl;unicode-bidi:
+    embed'><span dir=ltr>&nbsp;</span></p>
+    
+    </div>

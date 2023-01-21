@@ -1,0 +1,36 @@
+
+
+mat-form-field{
+    margin-left: 10px;
+}
+
+.mat-dialog-content, h1{
+    direction: rtl;
+}
+
+#save{
+    background-color: aqua;
+    color: white;
+}
+
+#clear{
+    background-color: aqua;
+    color: white;
+}
+
+#cancel{
+    background-color: black;
+    color: white;
+}
+
+.ml{
+    margin-left: 20px;
+}
+
+::ng-deep .mat-radio-label-content{
+    margin-right: 4px;
+}
+
+mat-radio-button{
+    margin-left: 20px;
+}

@@ -1,0 +1,104 @@
+
+
+.example-tree-invisible {
+    display: none;
+  }
+  
+  .example-tree ul,
+  .example-tree li {
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style-type: none;
+  }
+  
+  /*
+   * This padding sets alignment of the nested nodes.
+   */
+  .example-tree .mat-nested-tree-node div[role=group] {
+    padding-left: 40px;
+  }
+  
+  /*
+   * Padding for leaf nodes.
+   * Leaf nodes need to have padding so as to align with other non-leaf nodes
+   * under the same parent.
+   */
+  .example-tree div[role=group] > .mat-tree-node {
+    padding-left: 40px;
+  }
+
+  .con{
+    display: flex;
+    justify-content: space-around;
+    min-height: 100vh;
+    padding-top: 100px;
+  }
+
+  .left, .right{
+    width: 48%;
+    height: fit-content;
+    border-radius: 25px;
+
+    background: #1F6E43;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 20px;
+}
+
+table{
+  width: 100%;
+  border-radius: 15px;
+}
+
+td, th{
+  padding: 5px !important;
+  text-align: center !important;
+  font-size: 14px !important;
+}
+
+th{
+  background-color: #1F6E43;
+}
+
+button{
+  margin-left: 10px;
+
+}
+
+#edit, #print{
+  background-color: #1F6E43;
+  color: white; 
+}
+
+#delete{
+  background-color: red;
+  color: white;
+}
+
+::ng-deep .mat-menu-panel{
+  overflow: hidden !important;
+}
+
+mat-tree{
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 15px;
+}
+
+#excel{
+  background-color: #1F6E43;
+  color: white;
+}
+
+
+.Row {
+  display: table;
+  width: 100%; /*Optional*/
+  table-layout: fixed; /*Optional*/
+  border-spacing: 10px; /*Optional*/
+}
+.Column {
+  display: table-cell;
+  background-color: red; /*Optional*/
+}
